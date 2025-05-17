@@ -13,8 +13,31 @@
 <body>
     <h1>🚴🏼‍♀️ Bikewatching</h1>
 
+    <div id="slider">
+        <label>
+            <em id="title">Filter by time:</em>
+            <input type="range" id="time-slider" min="-1" max="1440" />
+        </label>
+        <em id="any-time">(any time)</em>
+        <time id="selected-time">12:00am</time>
+    </div>
+
     <div id="map">
         <svg></svg>
     </div>
+
+    <dl id="tooltip" class="info tooltip" hidden>
+        <dt>Station Name</dt>
+        <dd id="name"></dd>
+
+        <dt>Total Traffic</dt>
+        <dd id="total-traffic"></dd>
+      
+        <dt>Arrivals</dt>
+        <dd id="arrivals"></dd>
+
+        <dt>Departures</dt>
+        <dd id="departures"></dd>
+    </dl>
 </body>
 </html>

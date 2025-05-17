@@ -33,3 +33,88 @@ html, body {
     height: 100%;
     pointer-events: none;
 }
+
+dl.info {
+    display: grid;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+    column-gap: 12px;
+    padding: 12px;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+dl.info dt {
+    grid-row: 1;
+    margin: 0;
+    font-size: 10px;
+    color: lightslategray;
+    font-family: inherit;
+}
+
+dl.info dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.tooltip {
+    position: fixed;
+    z-index: 2;
+    top: 1em;
+    left: 1em;
+    box-shadow: 0 0 4px lightslategray;
+    border-radius: 10px;
+    background-color: white;
+}
+
+circle {
+    transition: 100ms;
+    transform-origin: center;
+    transform-box: fill-box;
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+    );
+    fill: var(--color);
+}
+
+circle:hover {
+    transform: scale(1.5);
+}
+
+h1 {
+    margin-right: auto;
+}
+
+#slider {
+    font-size: 12px;
+    text-align: right;
+    margin: 0 0 12px auto;
+}
+
+#slider input {
+    width: 30rem;
+    height: 6px;
+    align-self: second baseline;
+}
+
+#any {
+    display: block;
+    margin-left: auto;
+    font-size: 12px;
+    color: lightslategray;
+}
+
+time {
+    display: block;
+    margin-left: auto;
+    font-size: 12px;
+}
