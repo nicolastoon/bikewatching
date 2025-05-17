@@ -72,22 +72,46 @@ dl.info dd {
     background-color: white;
 }
 
-circle {
+#map circle {
     transition: 100ms;
     transform-origin: center;
     transform-box: fill-box;
-    --color-departures: steelblue;
-    --color-arrivals: darkorange;
+    --color-departures: oklch(0.78 0.063 235.36);
+    --color-arrivals: oklch(0.75 0.1504 44.85);
     --color: color-mix(
-    in oklch,
-    var(--color-departures) calc(100% * var(--departure-ratio)),
-    var(--color-arrivals)
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
     );
     fill: var(--color);
 }
 
-circle:hover {
+#map circle:hover {
     transform: scale(1.5);
+}
+
+.legend {
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    margin-block: 12px;
+}
+
+.legend div {
+    --color-departures: oklch(0.78 0.063 235.36);
+    --color-arrivals: oklch(0.75 0.1504 44.85);
+    --color: color-mix(
+        in oklch,
+        var(--color-departures) calc(100% * var(--departure-ratio)),
+        var(--color-arrivals)
+    );
+    background-color: var(--color);
+    flex: 1;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px;
+    color: oklch(0.96 0 63.88);
+    font-weight: bold;
 }
 
 h1 {
